@@ -7,19 +7,54 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "Aplikasi ini membutuhkan akses kamera untuk mengambil bukti foto.",
+        "NSLocationWhenInUseUsageDescription": "Aplikasi ini membutuhkan akses lokasi untuk menandai titik pengambilan foto."
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#0f172a"
       },
-      "package": "com.emen.jobdashboard"
+      "package": "com.emen.jobdashboard",
+      "permissions": [
+        "CAMERA",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION"
+      ]
     },
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#0f172a"
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Aplikasi ini membutuhkan akses kamera untuk mengambil bukti foto."
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationPermission": "Aplikasi ini membutuhkan akses lokasi untuk menandai titik pengambilan foto."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Aplikasi ini membutuhkan akses galeri untuk memilih bukti foto.",
+          "cameraPermission": "Aplikasi ini membutuhkan akses kamera untuk mengambil bukti foto."
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "a48ba01f-b8bb-4d8a-a12b-78f41bed375c"
+      }
     }
   }
 }

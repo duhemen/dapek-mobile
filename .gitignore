@@ -11,3 +11,6 @@ web-build/
 npm-debug.*
 yarn-debug.*
 yarn-error.*
+# Abaikan folder native karena kita menggunakan Prebuild (CNG)
+/android
+/ios
